@@ -1,35 +1,28 @@
+import java.util.*;
 public class practice {
-    public static void averageofnumber(int a,int b,int c){
-        int average=(a+b+c)/3;
-        System.out.println( "average is= "+average);
-    }
-    public static boolean iseven(int n){
-        if(n%2==0){
-            return true;
+    public static int binary(int num[],int target ){
+       int start=0;
+        int end=num.length-1;
+        while(start<=end){
+            int mid=(start+end)/2;
+            if(num[mid]==target){
+                return mid;
+            }
+            if(num[mid]<target){
+                 start=mid+1;
+                
+            }
+            else{
+               end=mid-1;
+                
+            }
         }
-        else{
-            return false;
-        }
-    }
-    public static void palindrome(int n){
-        int original=n;
-        int reverse=0;
-        while(n>0){
-            int lastdigit=n%10;
-            reverse=reverse*10+lastdigit;
-            n=n/10;
-        }
-        if(original==reverse){
-            System.out.println("number is palindrome");
-        }
-        else{
-            System.out.println(" not a palindrome");
-        }
+        return -1;
     }
     
     public static void main(String[] args) {
-        averageofnumber(10,20,30);
-        System.out.println(iseven(20));
-        palindrome(121);
+        int number[]={2,4,6,8,10,12,14};
+        int target=10;
+        System.out.print(binary(number, target));
     }
 }
