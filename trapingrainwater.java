@@ -1,5 +1,5 @@
-public class practice {
-    public static int binary(int height[]){
+public class trapingrainwater {
+    public static int trapping(int height[]){
         int n=height.length;
         int leftmax[]=new int[n];
         leftmax[0]=height[0];
@@ -18,9 +18,8 @@ public class practice {
         }
         return trappedwater;
     }
-    
     public static void main(String[] args) {
         int number[]={4,2,0,6,3,2,5};
-        System.out.print(binary(number));
+        System.out.println(trapping(number));
     }
 }
